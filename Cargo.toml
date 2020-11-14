@@ -1,0 +1,20 @@
+[package]
+name = "nekew"
+version = "0.1.0"
+authors = ["lain || Xavier Fernandez <xavier.fernandez92@myhunter.cuny.edu>"]
+edition = "2018"
+license = "MIT"
+license-file = "LICENSE"
+repository = "https://github.com/Xavulu/nekew"
+description = "A feline themed file encryption cli"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "2.33.3"
+paris = "1.5" 
+sodiumoxide = "0.2.2" 
+rpassword = "5.0"
+color-eyre = "0.5"
+
