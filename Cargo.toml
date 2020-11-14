@@ -4,7 +4,6 @@ version = "0.1.0"
 authors = ["lain || Xavier Fernandez <xavier.fernandez92@myhunter.cuny.edu>"]
 edition = "2018"
 license = "MIT"
-license-file = "LICENSE"
 repository = "https://github.com/Xavulu/nekew"
 description = "A feline themed file encryption cli"
 readme = "README.md"
