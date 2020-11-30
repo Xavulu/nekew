@@ -18,3 +18,9 @@ color-eyre = "0.5"
 colored = "2.0.0" 
 file_shred = "1.1.0" 
 sodiumoxide = "0.2.6"
+tracing = "0.1.22" 
+
+[[bin]]
+name = "nekew"
+test = false 
+bench = false
