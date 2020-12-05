@@ -2,7 +2,7 @@
 
 
 mod encrypt;
-use encrypt::{encrypt, decrypt};
+use encrypt::*;
 
 use std::fs::{File, remove_file};
 use std::path::Path;
@@ -16,9 +16,10 @@ use color_eyre::eyre::{Report, Result, WrapErr};
 use tracing::{info, instrument}; 
 use rpassword;
 use file_shred::shred_file;
-use paris::Logger;
+use paris::{LogIcon, Logger};
 
 const EXTENSION: &str = ".nekew";
+const EXISTS: &str ="enc_";
 
 const LOGO: &str =  r#"
             _                  
@@ -44,10 +45,9 @@ fn main() -> Result<(), Report> {
             .short("m")
             .long("mode")
             .help("choose to encrypt or decrypt a file")
-            .value_name("encrypt/decrypt")
+            .value_name("ENCRYPT/DECRYPT")
             .takes_value(true)
-            .required(true)
-/*.index(1)*/)
+            .required(true))
         .arg(Arg::with_name("input")
             .short("i")
             .long("input")
@@ -99,18 +99,28 @@ fn main() -> Result<(), Report> {
         eprintln!("{}", "The passwords don't match (=xܫ x=)∫".red());
         exit(1);
     }
-    println!("password1: {}, password2: {}", password, passcheck);
+
+    //encryption and associated file creation/checking stuff 
+    let mode = nekew.value_of("mode").unwrap(); 
+    match mode { 
+        "encrypt" | "ENCRYPT" | "Encrypt" => {  }, 
+        "decrypt" | "DECRYPT" | "Decrypt" => { }, 
+        _ => { 
+            eprintln!("{} {}", mode , "is not a valid mode sorry (=xܫ x=)∫".red()); 
+            exit(1);
+        },
+    }
 
     //confirmation for file shredding and destruction  
     let shred = nekew.value_of("kill").unwrap(); 
     match shred { 
         "true" | "TRUE" | "True" => {
-            log.warn("<yellow>The original file will be</> <red>permanently</> <yellow>deleted/shredded</> (^._.^)");
+            log.warn("<yellow>The original file will be</> <red>PERMANENTLY</> <yellow>deleted/shredded</> (^._.^)");
             let shredded = file_shred::shred_file(infile);
             match shredded { 
                 Ok(i) => {
                     println!("{} was succesfully shredded (=Φܫ Φ=)∫", infile.display()); 
-                    i
+                    i //not really needed :)
                 }, 
                 Err(fail) => {
                     eprintln!("{}",fail.red()); 
@@ -121,7 +131,7 @@ fn main() -> Result<(), Report> {
         _ => println!("no file shredding "),
     }
 
-
+    println!("goodbye {} {}", "<3".red().bold(), "₍˄·͈༝·͈˄*₎◞ ̑̑  (=Φܫ Φ=)∫  ฅ(＾・ω・＾ฅ)".magenta());
 
     Ok(())
 }

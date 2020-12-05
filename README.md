@@ -10,8 +10,11 @@ see the description, this doesn't really work yet but .....
 ### prerequisutes: 
 You should have rust installed on your computer as well as cc/clang as this project uses 
 sodiumoxide which requires them for linking to the c++ library libsodium 
-this should work on all unix like os, I dont use windows so idk about that.....
+this should work on all unix like os, I dont use windows so idk about that..... 
 
+you should also make unwriteable.txt a read only locked file, it only exists to test for file shredding errors.
+
+> inbetween changes atm so this may not compile at all ฅ(＾・ω・＾ฅ)
 ### debug
 ```
 cargo build --color always && ./target/debug/nekew 
