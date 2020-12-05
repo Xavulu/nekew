@@ -103,8 +103,12 @@ fn main() -> Result<(), Report> {
     //encryption and associated file creation/checking stuff 
     let mode = nekew.value_of("mode").unwrap(); 
     match mode { 
-        "encrypt" | "ENCRYPT" | "Encrypt" => {  }, 
-        "decrypt" | "DECRYPT" | "Decrypt" => { }, 
+        "encrypt" | "ENCRYPT" | "Encrypt" => {  
+
+        }, 
+        "decrypt" | "DECRYPT" | "Decrypt" => { 
+            
+        }, 
         _ => { 
             eprintln!("{} {}", mode , "is not a valid mode sorry (=xܫ x=)∫".red()); 
             exit(1);

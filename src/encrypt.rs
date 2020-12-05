@@ -18,6 +18,7 @@ pub fn encrypt(in_put: &mut File, out_put: &mut File, pass: &str) -> Result<(), 
     let mut logger = Logger::new();
     logger.loading("<blue>beginning file encryption</>  <magenta>ฅ(＾・ω・＾ฅ)</>");
 
+    
 
     Ok(())
 } 
