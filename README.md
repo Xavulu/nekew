@@ -1,13 +1,13 @@
 ![nekew-logo](nekew_png.png) 
 
 ## nekew 
-Nekew is a feline themed cli file encryption tool which uses libsodium's crypto secretstream encryption 
+Nekew is a feline themed cli file encryption tool which uses libsodium's [crypto secretstream encryption](https://libsodium.gitbook.io/doc/secret-key_cryptography/secretstream) 
  
 ## how to build
 
 ### prerequisutes: 
-- A working rust installation 
-- A working installation of cc/clang for compiling libsodium and linking it to sodiumoxide 
+- A working [rust installation](https://www.rust-lang.org/tools/install)
+- A working installation of cc/clang for compiling [libsodium](https://libsodium.gitbook.io/doc/) and linking it to [sodiumoxide](https://crates.io/crates/sodiumoxide) 
 
 this should work on all unix like os, I dont use windows so idk about that..... 
 
