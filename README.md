@@ -27,7 +27,7 @@ as a little test of the program you can run this after compilation is done:
 ``` 
 and enter the password ```1234567890``` , use something better for your own files please
 
-### usage 
+## usage 
 ``` 
 
             _                  
