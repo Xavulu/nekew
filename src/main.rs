@@ -4,22 +4,22 @@
 mod encrypt;
 use encrypt::{encrypt, decrypt, verify};
 
-use std::fs::{File, remove_file};
+use std::fs::{File};
 use std::path::Path;
 use std::process::exit;
-use std::error::Error;
-use std::io;
-use std::io::prelude::*;
-use std::io::{Read, Write, Seek, SeekFrom};
+
+
+
+
 use std::time::Instant;
 
 use colored::*;
-use clap::{Arg, App, SubCommand, AppSettings}; 
-use color_eyre::eyre::{Report, Result, WrapErr};
-use tracing::{info, instrument}; 
+use clap::{Arg, App, AppSettings}; 
+use color_eyre::eyre::{Report, Result};
+use tracing::{instrument}; 
 use rpassword;
-use file_shred::shred_file;
-use paris::{LogIcon, Logger};
+
+use paris::{Logger};
 
 const EXTENSION: &str = ".nekew";
 const EXISTS: &str ="enc_";
