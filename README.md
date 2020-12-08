@@ -16,7 +16,7 @@ this should work on all unix like os, I dont use windows so idk about that.....
 ``` 
  cargo build --bin nekew --color always --release
 ```
-after this move the binary "nekew" from ``` /target/release ``` to ``` usr/bin ``` on linux or ``` usr/local/bin ``` on mac 
+after this move the binary "nekew" from ``` /target/release ``` to ``` /usr/bin ``` on linux or ``` /usr/local/bin ``` on mac 
 - if compilation fails first check that you actually have a working c compiler and rust installed
 - if it still fails after this delete the target directory and recompile
 
@@ -55,3 +55,22 @@ OPTIONS:
 
 
 ``` 
+[![asciicast](https://asciinema.org/a/377913.svg)](https://asciinema.org/a/377913) 
+
+### special commands 
+- "--kill": takes a true false value, when true the file is [shredded](https://en.wikipedia.org/wiki/Shred_(Unix)) and deleted from the file system post encryption 
+- "--sensitive": when this flag is present a more secure albeit more memory intensive key-derivation algorithm is used in encryption 
+
+### encryption command example
+``` 
+nekew --input "path to file" --kill TRUE --mode encrypt --output "output directory" --sensitive 
+``` 
+### decryption command example
+``` 
+nekew --input "path to file" --kill TRUE --mode decrypt --output "output directory" --sensitive 
+``` 
+
+### WARNING 
+PLEASE remember your password for encryption otherwise you're basically just using ransomware on your files  
+
+₍˄·͈༝·͈˄*₎◞ ̑̑  (=Φܫ Φ=)∫  ฅ(＾・ω・＾ฅ)

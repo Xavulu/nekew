@@ -24,3 +24,7 @@ tracing = "0.1.22"
 name = "nekew"
 test = false 
 bench = false
+
+[profile.release]
+opt-level = 'z'
+lto = true  
