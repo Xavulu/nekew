@@ -1,18 +1,15 @@
 ![nekew-logo](nekew_png.png) 
 
 ## nekew 
-yet another wip from your boy xavier f. 
-see the description, this doesn't really work yet but .....
-
-
+Nekew is a feline themed cli file encryption tool which uses libsodium's crypto secretstream encryption 
+ 
 ## how to build
 
 ### prerequisutes: 
-You should have rust installed on your computer as well as cc/clang as this project uses 
-sodiumoxide which requires them for linking to the c++ library libsodium 
-this should work on all unix like os, I dont use windows so idk about that..... 
+- A working rust installation 
+- A working installation of cc/clang for compiling libsodium and linking it to sodiumoxide 
 
-you should also make unwriteable.txt a read only locked file, it only exists to test for file shredding errors.
+this should work on all unix like os, I dont use windows so idk about that..... 
 
 > inbetween changes atm so this may not compile at all ฅ(＾・ω・＾ฅ)
 ### compiling
@@ -20,8 +17,15 @@ you should also make unwriteable.txt a read only locked file, it only exists to 
  cargo build --bin nekew --color always --release
 ```
 after this move the binary "nekew" from ``` /target/release ``` to ``` usr/bin ``` on linux or ``` usr/local/bin ``` on mac 
-if compilation fails first check that you actually have a working c compiler and rust installed
-if it still fails after this delete the target directory and recompile
+- if compilation fails first check that you actually have a working c compiler and rust installed
+- if it still fails after this delete the target directory and recompile
+
+as a little test of the program you can run this after compilation is done: 
+
+``` 
+./target/release/nekew --input bingus.gif.nekew --kill false --mode decrypt  --out ./  --sensitive 
+``` 
+and enter the password ```1234567890``` , use something better for your own files please
 
 ### usage 
 ``` 
@@ -51,9 +55,3 @@ OPTIONS:
 
 
 ``` 
-as a little test of the program you can run this after compilation is done: 
-
-``` 
-./target/release/nekew --input bingus.gif.nekew --kill false --mode decrypt  --out ./  --sensitive 
-``` 
-and enter the password ```1234567890``` , use something better for your own files please

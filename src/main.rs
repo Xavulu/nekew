@@ -172,6 +172,10 @@ fn main() -> Result<(), Report> {
                     };
     
                     let dec_result = decrypt(&mut cryptin, &mut dec, password.as_str(), sensitive);
+                    match dec_result { 
+                        Ok(()) => println!("{}", "\ndecryption succesful ₍˄·͈༝·͈˄*₎◞ ".blue()), 
+                        Err(failed) => panic!("Encryption error: {:?}", failed),
+                    }
                 }, 
                 false => { 
                     eprintln!("{}", "this file is either not encrypted or encrypted by another program (=xܫ x=)∫".red()); 
@@ -197,7 +201,6 @@ fn main() -> Result<(), Report> {
             match shredded { 
                 Ok(()) => {
                     println!("{} was succesfully shredded (=Φܫ Φ=)∫", infile.display()); 
-                    () //not really needed :)
                 }, 
                 Err(fail) => {
                     eprintln!("{}",fail.red()); 
