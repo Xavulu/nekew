@@ -11,7 +11,7 @@ Nekew is a feline themed cli file encryption tool which uses libsodium's crypto 
 
 this should work on all unix like os, I dont use windows so idk about that..... 
 
-> inbetween changes atm so this may not compile at all ฅ(＾・ω・＾ฅ)
+> it works now ฅ(＾・ω・＾ฅ)
 ### compiling
 ``` 
  cargo build --bin nekew --color always --release
