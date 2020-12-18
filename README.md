@@ -70,7 +70,14 @@ nekew --input "path to file" --kill TRUE --mode encrypt --output "output directo
 nekew --input "path to file" --kill TRUE --mode decrypt --output "output directory" --sensitive 
 ``` 
 
-### WARNING 
-PLEASE remember your password for encryption otherwise you're basically just using ransomware on your files  
+### WARNINGS
+- PLEASE remember your password for encryption otherwise you're basically just using ransomware on your files  
+- If you use the sensitive flag during file encryption you must also use it during file decryption. The opposite is also true i.e if the flag isn't present during encryption it shouldnt be there for decryption. If you mess up with this it will throw an error and create an empty file  
+
+## TODO 
+- Implement compression for encryption cause the files can end up MASSSIVE otherwise 
+- Make the kill argument a flag instead 
+- Test on windows and add binary releases for windows/mac/linux 
+- Make errors look better for the end user
 
 ₍˄·͈༝·͈˄*₎◞ ̑̑  (=Φܫ Φ=)∫  ฅ(＾・ω・＾ฅ)
