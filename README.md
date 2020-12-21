@@ -7,28 +7,33 @@ Nekew is a feline themed cli file encryption tool which uses libsodium's [crypto
 
 ### prerequisutes: 
 - A working [rust installation](https://www.rust-lang.org/tools/install)
-- A working installation of cc/clang for compiling [libsodium](https://libsodium.gitbook.io/doc/) and linking it to [sodiumoxide](https://crates.io/crates/sodiumoxide) 
+- LINUX/OSX: A working installation of cc/clang for compiling [libsodium](https://libsodium.gitbook.io/doc/) and linking it to [sodiumoxide](https://crates.io/crates/sodiumoxide) 
+- WINDOWS: you should have the [MSVC compiler](https://visualstudio.microsoft.com/vs/features/cplusplus/) installed for compiling libsodium-sys and linking it to sodiumoxide
 
-this should work on all unix like os, I dont use windows so idk about that..... 
 
-> it works now ฅ(＾・ω・＾ฅ)
-### compiling
-``` 
+
+> its been tested on windows/linux/osx now ฅ(＾・ω・＾ฅ) 
+> slight caveat tho for windows, some of the cute cat kaomoji don't render properly in terminal unless you're using something like alacritty with a full monospaced font instead ♡(ﾐ ᵕ̣̣̣̣̣̣ ﻌ ᵕ̣̣̣̣̣̣ ﾐ)ﾉ
+### compiling 
+```shell 
  cargo build --bin nekew --color always --release
 ```
 after this move the binary "nekew" from ``` /target/release ``` to ``` /usr/bin ``` on linux or ``` /usr/local/bin ``` on mac 
+
+i'm not really sure where to add it on windows .....
+
 - if compilation fails first check that you actually have a working c compiler and rust installed
 - if it still fails after this delete the target directory and recompile
 
 as a little test of the program you can run this after compilation is done: 
 
-``` 
+```shell 
 ./target/release/nekew --input bingus.gif.nekew --kill false --mode decrypt  --out ./  --sensitive 
 ``` 
 and enter the password ```1234567890``` , use something better for your own files please
 
 ## usage 
-``` 
+```shell 
 
             _                  
  _ __   ___| | _______      __  ／l、        
@@ -62,12 +67,12 @@ OPTIONS:
 - "--sensitive": when this flag is present a more secure albeit more memory intensive key-derivation algorithm is used in encryption 
 
 ### encryption command example
-``` 
-nekew --input "path to file" --kill TRUE --mode encrypt --output "output directory" --sensitive 
+```shell 
+nekew --input "path to file" --kill TRUE --mode encrypt --out "output directory" --sensitive 
 ``` 
 ### decryption command example
-``` 
-nekew --input "path to file" --kill TRUE --mode decrypt --output "output directory" --sensitive 
+```shell 
+nekew --input "path to file" --kill TRUE --mode decrypt --out "output directory" --sensitive 
 ``` 
 
 ### WARNINGS
